@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamagotchi</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <h1>Welcome to your virtual Tamagotchi world!</h1>
+    <br>
+    <img src="img/tama1.png" alt="Tamagotchi"/>
+    <br>
+    <h2>Name: @Model.GetName()</h2>
+    <h2>Food Level: @Model.GetFood()</h2>
+    <h2>Rest Level: @Model.GetSleep()</h2>
+    <h2>Happiness Level: @Model.GetHappiness()</h2>
+    <h2>Am I dead? 0/1?: @Model.GetDeath()</h2>
+    <br>
+    <h2>Press any of these buttons to get started</h2>
+    <form class="food" action="/tamagotchi/Food" method="post">
+      <button id="food" class="btn btn-success" type="submit" name="btn">Feed it</button>
+    </form>
+    <br>
+    <form class="play" action="/tamagotchi/Happiness" method="post">
+      <button id="play" class="btn btn-primary" type="submit" name="btn">Play with it</button>
+    </form>
+    <br>
+    <form class="rest" action="/tamagotchi/Sleep" method="post">
+      <button id="rest" class="btn btn-warning" type="submit" name="btn">Put it to bed</button>
+    </form>
+    <br>
+    <form class="death" action="/tamagotchi/Death" method="post">
+      <button id="death" class="btn btn-danger" type="submit" name="btn">Kill it</button>
+    </form>
+  </body>
+</html>
